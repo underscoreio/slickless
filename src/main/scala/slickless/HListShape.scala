@@ -1,4 +1,4 @@
-package io.underscore.slick
+package slickless
 
 import scala.annotation.tailrec
 import scala.reflect.ClassTag

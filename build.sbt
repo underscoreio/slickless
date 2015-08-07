@@ -1,4 +1,4 @@
-name := "slick-shapeless"
+name := "slickless"
 
 organization := "io.underscore"
 

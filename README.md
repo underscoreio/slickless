@@ -18,7 +18,7 @@ resolvers += "Underscore Bintray" at "https://dl.bintray.com/underscoreio/librar
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick"           % "3.0.0",
   "com.chuusai"        %% "shapeless"       % "2.2.5",
-  "io.underscore"      %% "slick-shapeless" % "0.1.0"
+  "io.underscore"      %% "slickless" % "0.1.0"
 )
 ~~~
 
@@ -30,7 +30,7 @@ and you should be able to define `Tables` on any shapeless `HList` type:
 ~~~ scala
 import slick.driver.H2Driver.api._
 import shapeless.{ HList, ::, HNil }
-import io.underscore.slick._
+import slickless._
 
 class Users(tag: Tag) extends Table[Long :: String :: HNil](tag, "users") {
   def id    = column[Long]( "id", O.PrimaryKey, O.AutoInc )

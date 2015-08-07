@@ -1,4 +1,4 @@
-package io.underscore.slick
+package slickless
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{ Future, Await }

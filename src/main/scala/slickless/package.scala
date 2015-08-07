@@ -1,0 +1,1 @@
+package object slickless extends HListShapeImplicits
