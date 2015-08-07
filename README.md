@@ -1,4 +1,4 @@
-# Slick shapeless
+# slickless
 
 Shapeless HList support for Slick.
 
@@ -24,7 +24,7 @@ libraryDependencies ++= Seq(
 
 # Usage
 
-Import Slick, shapeless, and Slick shapeless,
+Import Slick, shapeless, and slickless,
 and you should be able to define `Tables` on any shapeless `HList` type:
 
 ~~~ scala
