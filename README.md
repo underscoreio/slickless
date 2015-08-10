@@ -16,8 +16,8 @@ scalaVersion := "2.11.7"
 resolvers += "Underscore Bintray" at "https://dl.bintray.com/underscoreio/libraries"
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"           % "3.0.0",
-  "com.chuusai"        %% "shapeless"       % "2.2.5",
+  "com.typesafe.slick" %% "slick"     % "3.0.0",
+  "com.chuusai"        %% "shapeless" % "2.2.5",
   "io.underscore"      %% "slickless" % "0.1.0"
 )
 ~~~
@@ -42,9 +42,9 @@ class Users(tag: Tag) extends Table[Long :: String :: HNil](tag, "users") {
 lazy val users = TableQuery[Users]
 ~~~
 
-[d6y]: http://twitter.com/d6y
-[milessabin]: http://twitter.com/milessabin
-[davegurnell]: http://twitter.com/davegurnell
+[d6y]: https://github.com/d6y
+[milessabin]: https://github.com/milessabin
+[davegurnell]: https://github.com/davegurnell
 
 [underscore]: http://underscore.io
 [license]: http://www.apache.org/licenses/LICENSE-2.0
