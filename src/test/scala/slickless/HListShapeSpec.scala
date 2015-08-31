@@ -1,11 +1,12 @@
 package slickless
 
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{ Future, Await }
-import scala.concurrent.duration._
 import org.scalatest.{ FreeSpec, Matchers }
+import shapeless.{ ::, HNil }
 import slick.driver.H2Driver.api._
-import shapeless.{ HList, ::, HNil }
+
+import scala.concurrent.Await
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration._
 
 class HListShapeSpec extends FreeSpec with Matchers {
   class Users(tag: Tag) extends Table[Long :: String :: HNil](tag, "users") {
