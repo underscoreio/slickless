@@ -29,7 +29,7 @@ libraryDependencies ++= Seq(
   "com.chuusai"        %% "shapeless"       % "2.2.5",
   "org.scalatest"      %% "scalatest"       % "2.2.4"   % "test",
   "com.h2database"      % "h2"              % "1.4.185" % "test",
-  "ch.qos.logback"      % "logback-classic" % "1.1.2"   % "test"
+  "ch.qos.logback"      % "logback-classic" % "1.1.3"   % "test"
 )
 
 // Bintray
