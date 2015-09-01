@@ -20,7 +20,7 @@ resolvers += "Underscore Bintray" at "https://dl.bintray.com/underscoreio/librar
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick"     % "3.0.0",
   "com.chuusai"        %% "shapeless" % "2.2.5",
-  "io.underscore"      %% "slickless" % "0.1.0"
+  "io.underscore"      %% "slickless" % "0.1.1"
 )
 ~~~
 
