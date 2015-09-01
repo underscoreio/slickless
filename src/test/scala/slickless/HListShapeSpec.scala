@@ -1,13 +1,16 @@
 package slickless
 
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{ Future, Await }
-import scala.concurrent.duration._
-import org.scalatest.{ FreeSpec, Matchers }
+import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.time.{Millis, Seconds, Span}
+import org.scalatest.{FreeSpec, Matchers}
+import shapeless.{::, HNil}
 import slick.driver.H2Driver.api._
-import shapeless.{ HList, ::, HNil }
 
-class HListShapeSpec extends FreeSpec with Matchers {
+import scala.concurrent.ExecutionContext.Implicits.global
+
+class HListShapeSpec extends FreeSpec with Matchers with ScalaFutures {
+  implicit val patience = PatienceConfig(timeout = Span(1, Seconds), interval = Span(250, Millis))
+
   class Users(tag: Tag) extends Table[Long :: String :: HNil](tag, "users") {
     def id    = column[Long]( "id", O.PrimaryKey, O.AutoInc )
     def email = column[String]("email")
@@ -27,7 +30,7 @@ class HListShapeSpec extends FreeSpec with Matchers {
         ans <- users.result.head
       } yield ans
 
-      Await.result(db.run(action), 1.second) should equal (1L :: "dave@example.com" :: HNil)
+      whenReady(db.run(action)) { _ should equal (1L :: "dave@example.com" :: HNil) }
     }
   }
 }
