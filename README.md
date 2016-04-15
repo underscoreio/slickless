@@ -6,21 +6,21 @@ Shapeless HList support for Slick.
 
 by [Richard Dallaway][d6y], [Miles Sabin][milessabin], and [Dave Gurnell][davegurnell].
 
-Copyright 2015 [Underscore Consulting LLP][underscore]. Licensed [Apache 2][license].
+Copyright 2015-2016 [Underscore Consulting LLP][underscore]. Licensed [Apache 2][license].
 
 # Installation
 
 Grab the code by adding the following to your `build.sbt`:
 
 ~~~
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 resolvers += "Underscore Bintray" at "https://dl.bintray.com/underscoreio/libraries"
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"     % "3.0.0",
-  "com.chuusai"        %% "shapeless" % "2.2.5",
-  "io.underscore"      %% "slickless" % "0.1.1"
+  "com.typesafe.slick" %% "slick"     % "3.1.1",
+  "com.chuusai"        %% "shapeless" % "2.3.0",
+  "io.underscore"      %% "slickless" % "0.2.0"
 )
 ~~~
 
