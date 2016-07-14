@@ -44,6 +44,39 @@ class Users(tag: Tag) extends Table[Long :: String :: HNil](tag, "users") {
 lazy val users = TableQuery[Users]
 ~~~
 
+If you want to map your `HList` to a case class (i.e. you have a case class that has more than
+22 fields and you are using slickless to bypass this limit), you can do the following
+
+~~~ scala
+import slick.driver.H2Driver.api._
+import shapeless.{ HList, ::, HNil, Generic }
+import slickless._
+
+case class User(id: Long, email: String)
+
+class Users(tag: Tag) extends Table[User](tag, "users") {
+  def id    = column[Long]( "id", O.PrimaryKey, O.AutoInc )
+  def email = column[String]("email")
+
+  def * = {
+    val userGeneric = Generic[User]
+    (id :: email :: HNil) <> (
+        (dbRow: userGeneric.Repr) => userGeneric.from(dbRow),
+        (caseClass: User) => Some(userGeneric.to(caseClass))
+    )
+  }
+}
+
+lazy val users = TableQuery[Users]
+~~~
+
+# Notes
+
+Due to this [issue](https://github.com/milessabin/shapeless/issues/619), if you accidentally make a mapping
+which is incorrect, the Scala compiler can take a huge amount of time to report an error. If your slickless project
+is taking an insanely long amount of time to compile (more than a couple of minutes), try to make sure you
+have the mapping correct before using `<>`.
+
 [d6y]: https://github.com/d6y
 [milessabin]: https://github.com/milessabin
 [davegurnell]: https://github.com/davegurnell
