@@ -13,10 +13,6 @@ Copyright 2015-2016 [Underscore Consulting LLP][underscore]. Licensed [Apache 2]
 Grab the code by adding the following to your `build.sbt`:
 
 ~~~
-scalaVersion := "2.11.8"
-
-resolvers += "Underscore Bintray" at "https://dl.bintray.com/underscoreio/libraries"
-
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick"     % "3.1.1",
   "com.chuusai"        %% "shapeless" % "2.3.1",
