@@ -1,14 +1,19 @@
 # slickless
 
+[![Build Status](https://travis-ci.org/underscoreio/slickless.svg?branch=master)](https://travis-ci.org/underscoreio/slickless)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11)
 [![Join the chat at https://gitter.im/underscoreio/slickless](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/underscoreio/slickless?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Shapeless HList support for Slick.
 
-by [Richard Dallaway][d6y], [Miles Sabin][milessabin], and [Dave Gurnell][davegurnell].
+by [Richard Dallaway][d6y],
+[Miles Sabin][milessabin],
+and [Dave Gurnell][davegurnell].
 
-Copyright 2015-2016 [Underscore Consulting LLP][underscore]. Licensed [Apache 2][license].
+Copyright 2015-2016 [Underscore Consulting LLP][underscore].
+Licensed [Apache 2][license].
 
-# Installation
+## Getting Started
 
 Grab the code by adding the following to your `build.sbt`:
 
@@ -20,7 +25,7 @@ libraryDependencies ++= Seq(
 )
 ~~~
 
-# Usage
+## Usage
 
 Import Slick, shapeless, and slickless,
 and you should be able to define `Tables` on any shapeless `HList` type:
@@ -40,8 +45,10 @@ class Users(tag: Tag) extends Table[Long :: String :: HNil](tag, "users") {
 lazy val users = TableQuery[Users]
 ~~~
 
-If you want to map your `HList` to a case class (i.e. you have a case class that has more than
-22 fields and you are using slickless to bypass this limit), you can do the following
+If you want to map your `HList` to a case class
+(i.e. you have a case class that has more than
+22 fields and you are using slickless to bypass this limit),
+you can do the following
 
 ~~~ scala
 import slick.driver.H2Driver.api._
@@ -66,12 +73,14 @@ class Users(tag: Tag) extends Table[User](tag, "users") {
 lazy val users = TableQuery[Users]
 ~~~
 
-# Notes
+## Notes
 
-Due to this [issue](https://github.com/milessabin/shapeless/issues/619), if you accidentally make a mapping
-which is incorrect, the Scala compiler can take a huge amount of time to report an error. If your slickless project
-is taking an insanely long amount of time to compile (more than a couple of minutes), try to make sure you
-have the mapping correct before using `<>`.
+Due to this [issue](https://github.com/milessabin/shapeless/issues/619),
+if you accidentally make a mapping which is incorrect,
+the Scala compiler can take a huge amount of time to report an error.
+If your slickless project is taking an insanely long amount of time to compile
+(more than a couple of minutes),
+try to make sure you have the mapping correct before using `<>`.
 
 [d6y]: https://github.com/d6y
 [milessabin]: https://github.com/milessabin
