@@ -25,8 +25,6 @@ libraryDependencies ++= Seq(
   "ch.qos.logback"      % "logback-classic" % "1.1.7"   % "test"
 )
 
-sonatypeProfileName := "io.underscore"
-
 pomExtra in Global := {
   <url>https://github.com/underscoreio/slickless</url>
   <scm>
