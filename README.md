@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
 )
 ~~~
 
-## Usage
+## Synopsis
 
 Import Slick, shapeless, and slickless,
 and you should be able to define `Tables` on any shapeless `HList` type:
