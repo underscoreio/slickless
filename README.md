@@ -1,6 +1,7 @@
 # slickless
 
 [![Build Status](https://travis-ci.org/underscoreio/slickless.svg?branch=master)](https://travis-ci.org/underscoreio/slickless)
+[![Coverage status](https://img.shields.io/codecov/c/github/underscoreio/slickless/develop.svg)](https://codecov.io/github/underscoreio/slickless)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11)
 [![Join the chat at https://gitter.im/underscoreio/slickless](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/underscoreio/slickless?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
