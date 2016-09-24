@@ -20,7 +20,7 @@ class HListShapeSpec extends FreeSpec with Matchers with ScalaFutures {
 
   lazy val users = TableQuery[Users]
 
-  "slick tables with shapeless mappings" - {
+  "slick tables with hlist mappings" - {
     "should support inserts and selects" in {
       val db = Database.forConfig("h2")
 
@@ -28,6 +28,7 @@ class HListShapeSpec extends FreeSpec with Matchers with ScalaFutures {
         _   <- users.schema.create
         _   <- users += 1L :: "dave@example.com" :: HNil
         ans <- users.result.head
+        _   <- users.schema.drop
       } yield ans
 
       whenReady(db.run(action)) { _ should equal (1L :: "dave@example.com" :: HNil) }

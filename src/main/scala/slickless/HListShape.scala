@@ -2,8 +2,9 @@ package slickless
 
 import scala.annotation.tailrec
 import scala.reflect.ClassTag
-import shapeless.{ HList, ::, HNil }
-import slick.lifted.{ Shape, ShapeLevel, MappedProductShape }
+import shapeless.{ HList, ::, HNil, Generic }
+import slick.ast.MappedScalaType
+import slick.lifted.{ Shape, ShapeLevel, FlatShapeLevel, MappedProductShape, MappedProjection }
 
 final class HListShape[L <: ShapeLevel, M <: HList, U <: HList : ClassTag, P <: HList]
     (val shapes: Seq[Shape[_, _, _, _]]) extends MappedProductShape[L, HList, M, U, P] {
@@ -40,4 +41,18 @@ trait HListShapeImplicits {
       (implicit s1: Shape[_ <: ShapeLevel, M1, U1, P1], s2: HListShape[_ <: ShapeLevel, M2, U2, P2]):
       HListShape[L, M1 :: M2, U1 :: U2, P1 :: P2] =
     new HListShape[L, M1 :: M2, U1 :: U2, P1 :: P2](s1 +: s2.shapes)
+
+  implicit class HListShapeOps[T <: HList](hlist: T) {
+    def mappedWith[R: ClassTag, U <: HList](gen: Generic.Aux[R, U])
+        (implicit shape: Shape[_ <: FlatShapeLevel, T, U, _]) =
+      new MappedProjection[R, U](
+        shape.toNode(hlist),
+        MappedScalaType.Mapper(
+          (gen.to _).asInstanceOf[Any => Any],
+          (gen.from _).asInstanceOf[Any => Any],
+          None
+        ),
+        implicitly[ClassTag[R]]
+      )
+  }
 }
