@@ -1,6 +1,6 @@
 name         := "slickless"
 organization := "io.underscore"
-version      := "0.2.1"
+version      := "0.3.0"
 scalaVersion := "2.11.8"
 
 licenses += ("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0"))
