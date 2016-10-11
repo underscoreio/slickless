@@ -22,7 +22,7 @@ Grab the code by adding the following to your `build.sbt`:
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick"     % "3.1.1",
   "com.chuusai"        %% "shapeless" % "2.3.1",
-  "io.underscore"      %% "slickless" % "0.3.0"
+  "io.underscore"      %% "slickless" % "<<VERSION>>"
 )
 ~~~
 
