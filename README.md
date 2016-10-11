@@ -62,13 +62,7 @@ class Users(tag: Tag) extends Table[User](tag, "users") {
   def id    = column[Long]( "id", O.PrimaryKey, O.AutoInc )
   def email = column[String]("email")
 
-  def * = {
-    val userGeneric = Generic[User]
-    (id :: email :: HNil) <> (
-        (dbRow: userGeneric.Repr) => userGeneric.from(dbRow),
-        (caseClass: User) => Some(userGeneric.to(caseClass))
-    )
-  }
+  def * = (id :: email :: HNil).mappedWith(Generic[User])
 }
 
 lazy val users = TableQuery[Users]
