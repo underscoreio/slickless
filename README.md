@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/underscoreio/slickless.svg?branch=master)](https://travis-ci.org/underscoreio/slickless)
 [![Coverage status](https://img.shields.io/codecov/c/github/underscoreio/slickless/develop.svg)](https://codecov.io/github/underscoreio/slickless)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11)
 [![Join the chat at https://gitter.im/underscoreio/slickless](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/underscoreio/slickless?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Shapeless HList support for Slick.
@@ -11,7 +10,7 @@ by [Richard Dallaway][d6y],
 [Miles Sabin][milessabin],
 and [Dave Gurnell][davegurnell].
 
-Copyright 2015-2016 [Underscore Consulting LLP][underscore].
+Copyright 2015-2017 [Underscore Consulting LLP][underscore].
 Licensed [Apache 2][license].
 
 ## Getting Started
@@ -25,6 +24,13 @@ libraryDependencies ++= Seq(
   "io.underscore"      %% "slickless" % "<<VERSION>>"
 )
 ~~~
+
+## Versions
+
+| Scala | Slick    | Slickless |
+|-------|----------|----------|
+| 2.12  | 3.2.0-M2 | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12) |
+| 2.11  | 3.1      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11) |
 
 ## Synopsis
 
