@@ -2,7 +2,7 @@ package userapp
 
 /* Ensure slickless compiles for large case classes with a nice set of imports. */
 
-import slick.driver.H2Driver.api._
+import slick.jdbc.H2Profile.api._
 import shapeless._
 import slickless._
 

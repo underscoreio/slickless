@@ -32,7 +32,7 @@ Import Slick, shapeless, and slickless,
 and you should be able to define `Tables` on any shapeless `HList` type:
 
 ~~~ scala
-import slick.driver.H2Driver.api._
+import slick.jdbc.H2Profile.api._
 import shapeless.{ HList, ::, HNil }
 import slickless._
 
@@ -52,7 +52,7 @@ If you want to map your `HList` to a case class
 you can do the following
 
 ~~~ scala
-import slick.driver.H2Driver.api._
+import slick.jdbc.H2Profile.api._
 import shapeless.{ HList, ::, HNil, Generic }
 import slickless._
 
