@@ -25,6 +25,23 @@ libraryDependencies ++= Seq(
 )
 ~~~
 
+and for scala 2.12 for example
+
+~~~
+resolvers += "Maven Central" at "https://repo1.maven.org/maven2/"
+
+resolvers += Resolver.sonatypeRepo("releases")
+
+resolvers += Resolver.sonatypeRepo("snapshots")
+
+libraryDependencies ++= Seq(
+  "com.typesafe.slick" %% "slick"     % "3.2.0",
+  "com.chuusai"        %% "shapeless" % "2.3.2",
+  "io.underscore"      %% "slickless" % "0.3.1"
+)
+~~~
+
+
 ## Versions
 
 | Scala | Slick    | Slickless |
