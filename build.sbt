@@ -3,6 +3,8 @@ organization := "io.underscore"
 version      := "0.3.1"
 scalaVersion := "2.12.1"
 
+crossScalaVersions := Seq("2.11.8", "2.12.1")
+
 licenses += ("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0"))
 
 scalacOptions ++= Seq(
