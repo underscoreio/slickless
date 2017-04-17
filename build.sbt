@@ -18,7 +18,7 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"           % "3.2.0-M2",
+  "com.typesafe.slick" %% "slick"           % "3.2.0",
   "com.chuusai"        %% "shapeless"       % "2.3.2",
   "org.scalatest"      %% "scalatest"       % "3.0.1"   % "test",
   "com.h2database"      % "h2"              % "1.4.191" % "test",
