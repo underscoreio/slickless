@@ -13,41 +13,25 @@ and [Dave Gurnell][davegurnell].
 Copyright 2015-2017 [Underscore Consulting LLP][underscore].
 Licensed [Apache 2][license].
 
+## Versions
+
+| Scala | Slick    | Slickless |
+|-------|----------|----------|
+| 2.12  | 3.2      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12) |
+| 2.11  | 3.1      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11) |
+
 ## Getting Started
 
 Grab the code by adding the following to your `build.sbt`:
 
 ~~~
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"     % "3.1.1",
+  "com.typesafe.slick" %% "slick"     % "3.2.0",
   "com.chuusai"        %% "shapeless" % "2.3.1",
   "io.underscore"      %% "slickless" % "<<VERSION>>"
 )
 ~~~
 
-and for scala 2.12 for example
-
-~~~
-resolvers += "Maven Central" at "https://repo1.maven.org/maven2/"
-
-resolvers += Resolver.sonatypeRepo("releases")
-
-resolvers += Resolver.sonatypeRepo("snapshots")
-
-libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"     % "3.2.0",
-  "com.chuusai"        %% "shapeless" % "2.3.2",
-  "io.underscore"      %% "slickless" % "0.3.1"
-)
-~~~
-
-
-## Versions
-
-| Scala | Slick    | Slickless |
-|-------|----------|----------|
-| 2.12  | 3.2.0-M2 | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12) |
-| 2.11  | 3.1      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11) |
 
 ## Synopsis
 
@@ -93,6 +77,8 @@ lazy val users = TableQuery[Users]
 
 ## Notes
 
+### Compile time
+
 Due to this [issue](https://github.com/milessabin/shapeless/issues/619),
 if you accidentally make a mapping which is incorrect,
 the Scala compiler can take a huge amount of time to report an error.
@@ -100,7 +86,25 @@ If your slickless project is taking an insanely long amount of time to compile
 (more than a couple of minutes),
 try to make sure you have the mapping correct before using `<>`.
 
-## Publishing
+### Build example without default resolvers
+
+If you need to add resolvers into your build, here's an example:
+
+~~~
+resolvers += "Maven Central" at "https://repo1.maven.org/maven2/"
+
+resolvers += Resolver.sonatypeRepo("releases")
+
+resolvers += Resolver.sonatypeRepo("snapshots")
+
+libraryDependencies ++= Seq(
+  "com.typesafe.slick" %% "slick"     % "3.2.0",
+  "com.chuusai"        %% "shapeless" % "2.3.2",
+  "io.underscore"      %% "slickless" % "0.3.1"
+)
+~~~
+
+### Publishing
 
 We use the [sbt-pgp plugin](http://www.scala-sbt.org/sbt-pgp/usage.html) and
 the [sbt-sonatype plugin](https://github.com/xerial/sbt-sonatype)
