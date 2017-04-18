@@ -7,7 +7,7 @@ import slick.ast.MappedScalaType
 import slick.lifted.{ Shape, ShapeLevel, FlatShapeLevel, MappedProductShape, MappedProjection }
 
 final class HListShape[L <: ShapeLevel, M <: HList, U <: HList : ClassTag, P <: HList]
-    (val shapes: Seq[Shape[_, _, _, _]]) extends MappedProductShape[L, HList, M, U, P] {
+    (val shapes: Seq[Shape[_<: ShapeLevel, _, _, _]]) extends MappedProductShape[L, HList, M, U, P] {
 
   def buildValue(elems: IndexedSeq[Any]) =
     elems.foldRight(HNil: HList)(_ :: _)
