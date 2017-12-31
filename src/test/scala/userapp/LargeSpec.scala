@@ -62,7 +62,7 @@ import org.scalatest.{FreeSpec, Matchers}
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class LargeSpec extends FreeSpec with Matchers with ScalaFutures {
-  implicit val patience = PatienceConfig(timeout = Span(2, Seconds), interval = Span(250, Millis))
+  implicit val patience = PatienceConfig(timeout = Span(90, Seconds), interval = Span(250, Millis))
 
   "slick tables with >22 column mappings" - {
     "should support inserts and selects" in {

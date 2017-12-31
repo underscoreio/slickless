@@ -9,7 +9,7 @@ import slick.jdbc.H2Profile.api._
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class GenShapeSpec extends FreeSpec with Matchers with ScalaFutures {
-  implicit val patience = PatienceConfig(timeout = Span(2, Seconds), interval = Span(250, Millis))
+  implicit val patience = PatienceConfig(timeout = Span(90, Seconds), interval = Span(250, Millis))
 
   case class Address(id: Long, house: Int, street: String)
 
