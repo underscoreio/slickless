@@ -55,14 +55,9 @@ class LargeTable(tag: Tag) extends Table[Large](tag, "large") {
   ).mappedWith(Generic[Large])
 }
 
-import org.scalatest.{Tag => _, _}
-import org.scalatest.concurrent.ScalaFutures
-import org.scalatest.time.{Millis, Seconds, Span}
-import org.scalatest.{FreeSpec, Matchers}
 import scala.concurrent.ExecutionContext.Implicits.global
 
-class LargeSpec extends FreeSpec with Matchers with ScalaFutures {
-  implicit val patience = PatienceConfig(timeout = Span(90, Seconds), interval = Span(250, Millis))
+class LargeSpec extends slickless.Spec {
 
   "slick tables with >22 column mappings" - {
     "should support inserts and selects" in {
