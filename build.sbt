@@ -12,12 +12,17 @@ scalacOptions ++= Seq(
   "-encoding", "UTF-8",
   "-unchecked",
   "-feature",
+  "-explaintypes",
   "-language:implicitConversions",
   "-language:postfixOps",
   "-Ywarn-dead-code",
-  "-Xlint",
-  "-Xfatal-warnings"
+  "-Xfatal-warnings",
+  "-Xlint:infer-any",
+  "-Ywarn-infer-any",
+  "-Ywarn-unused:implicits",
 )
+
+scalacOptions in (Compile, console) --= Seq("-Ywarn-unused:imports", "-Xfatal-warnings")
 
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick"           % "3.2.1",
