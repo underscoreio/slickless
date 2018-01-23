@@ -35,24 +35,32 @@ final class HListShape[L <: ShapeLevel, M <: HList, U <: HList : ClassTag, P <: 
 
 trait HListShapeImplicits {
   implicit def hnilShape[L <: ShapeLevel]: HListShape[L, HNil, HNil, HNil] =
-    new HListShape[L, HNil, HNil, HNil](Nil)
+    new HListShape(Nil)
 
-  implicit def hconsShape[L <: ShapeLevel, M1, M2 <: HList, U1, U2 <: HList, P1, P2 <: HList]
-      (implicit s1: Shape[_ <: ShapeLevel, M1, U1, P1], s2: HListShape[_ <: ShapeLevel, M2, U2, P2]):
-      HListShape[L, M1 :: M2, U1 :: U2, P1 :: P2] =
-    new HListShape[L, M1 :: M2, U1 :: U2, P1 :: P2](s1 +: s2.shapes)
+  implicit def hconsShape[
+    L <: ShapeLevel, L1 <: L, L2 <: L,
+    M1, M2 <: HList,
+    U1, U2 <: HList,
+    P1, P2 <: HList
+  ](implicit
+    s1: Shape[L1, M1, U1, P1],
+    s2: HListShape[L2, M2, U2, P2]
+  ): HListShape[L, M1 :: M2, U1 :: U2, P1 :: P2] =
+    new HListShape(s1 +: s2.shapes)
 
   implicit class HListShapeOps[T <: HList](hlist: T) {
-    def mappedWith[R: ClassTag, U <: HList](gen: Generic.Aux[R, U])
-        (implicit shape: Shape[_ <: FlatShapeLevel, T, U, _]) =
-      new MappedProjection[R, U](
-        shape.toNode(hlist),
-        MappedScalaType.Mapper(
-          (gen.to _).asInstanceOf[Any => Any],
-          (gen.from _).asInstanceOf[Any => Any],
-          None
-        ),
-        implicitly[ClassTag[R]]
-      )
+    def mappedWith[
+      R: ClassTag, U <: HList, L <: FlatShapeLevel, P
+    ](gen: Generic.Aux[R, U])(
+      implicit shape: Shape[L, T, U, P]
+    ) = new MappedProjection[R, U](
+      shape.toNode(hlist),
+      MappedScalaType.Mapper(
+        (gen.to _).asInstanceOf[Any => Any],
+        (gen.from _).asInstanceOf[Any => Any],
+        None
+      ),
+      implicitly[ClassTag[R]]
+    )
   }
 }
