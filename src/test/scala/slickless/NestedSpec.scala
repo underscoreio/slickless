@@ -5,7 +5,7 @@ import slick.jdbc.H2Profile.api._
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
-class Nested extends Spec {
+class NestedSpec extends Spec {
 
   case class Department(id: Long, city: String)
 
@@ -24,7 +24,7 @@ class Nested extends Spec {
 
   lazy val emps = TableQuery[Employees]
 
-  "slick tables with nexted case class mappings" - {
+  "slick tables with nested case class mappings" - {
     "should support inserts and selects" in {
       val db = Database.forConfig("h2")
 
