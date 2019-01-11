@@ -1,9 +1,9 @@
 name         := "slickless"
 organization := "io.underscore"
-version      := "0.3.3"
-scalaVersion := "2.12.4"
+version      := "0.3.4"
+scalaVersion := "2.12.8"
 
-crossScalaVersions := Seq("2.11.12", "2.12.4")
+crossScalaVersions := Seq("2.11.12", "2.12.8")
 
 licenses += ("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0"))
 
@@ -20,11 +20,11 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"           % "3.2.1",
+  "com.typesafe.slick" %% "slick"           % "3.2.3",
   "com.chuusai"        %% "shapeless"       % "2.3.3",
-  "org.scalatest"      %% "scalatest"       % "3.0.1"   % "test",
-  "com.h2database"      % "h2"              % "1.4.191" % "test",
-  "ch.qos.logback"      % "logback-classic" % "1.1.7"   % "test"
+  "org.scalatest"      %% "scalatest"       % "3.0.5"   % "test",
+  "com.h2database"      % "h2"              % "1.4.197" % "test",
+  "ch.qos.logback"      % "logback-classic" % "1.2.3"   % "test"
 )
 
 pomExtra in Global := {

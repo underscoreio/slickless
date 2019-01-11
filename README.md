@@ -26,7 +26,7 @@ Grab the code by adding the following to your `build.sbt`:
 
 ~~~
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"     % "3.2.1",
+  "com.typesafe.slick" %% "slick"     % "3.2.3",
   "com.chuusai"        %% "shapeless" % "2.3.3",
   "io.underscore"      %% "slickless" % "<<VERSION>>"
 )
@@ -98,9 +98,9 @@ resolvers += Resolver.sonatypeRepo("releases")
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"     % "3.2.1",
+  "com.typesafe.slick" %% "slick"     % "3.2.3",
   "com.chuusai"        %% "shapeless" % "2.3.3",
-  "io.underscore"      %% "slickless" % "0.3.3"
+  "io.underscore"      %% "slickless" % "0.3.4"
 )
 ~~~
 
