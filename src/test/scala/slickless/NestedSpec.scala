@@ -12,12 +12,12 @@ class NestedSpec extends Spec {
   case class Employee(id: Long, dept: Department, email: String)
 
   class Employees(tag: Tag) extends Table[Employee](tag, "emps") {
-    def id              = column[Long]( "id", O.PrimaryKey, O.AutoInc )
-    def department_id   = column[Long]("dept_id")
-    def department_city = column[String]("dept_city")
-    def email           = column[String]("email")
+    def id             = column[Long]("id", O.PrimaryKey, O.AutoInc)
+    def departmentId   = column[Long]("dept_id")
+    def departmentCity = column[String]("dept_city")
+    def email          = column[String]("email")
 
-    def department = (department_id, department_city).mapTo[Department]
+    def department = (departmentId, departmentCity).mapTo[Department]
 
     def * = (id :: department :: email :: HNil).mappedWith(Generic[Employee])
   }
