@@ -24,7 +24,7 @@ libraryDependencies ++= Seq(
   "com.chuusai"        %% "shapeless"       % "2.3.3",
   "org.scalatest"      %% "scalatest"       % "3.0.1"   % "test",
   "com.h2database"      % "h2"              % "1.4.191" % "test",
-  "ch.qos.logback"      % "logback-classic" % "1.1.7"   % "test"
+  "ch.qos.logback"      % "logback-classic" % "1.1.11"   % "test"
 )
 
 pomExtra in Global := {
