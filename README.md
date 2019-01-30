@@ -10,15 +10,17 @@ by [Richard Dallaway][d6y],
 [Miles Sabin][milessabin],
 and [Dave Gurnell][davegurnell].
 
-Copyright 2015-2018 [Underscore Consulting LLP][underscore].
+Copyright 2015-2019 [Underscore Consulting LLP][underscore].
 Licensed [Apache 2][license].
 
 ## Versions
 
 | Scala | Slick    | Slickless |
 |-------|----------|----------|
-| 2.12  | 3.2      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12) |
+| 2.12  | 3.3      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12) |
 | 2.11  | 3.1      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.11) |
+
+If you specifically need Slick 3.2, use [slickless 0.3.3](https://github.com/underscoreio/slickless/releases/tag/0.3.3).
 
 ## Getting Started
 
@@ -26,7 +28,7 @@ Grab the code by adding the following to your `build.sbt`:
 
 ~~~
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"     % "3.2.1",
+  "com.typesafe.slick" %% "slick"     % "3.3.0",
   "com.chuusai"        %% "shapeless" % "2.3.3",
   "io.underscore"      %% "slickless" % "<<VERSION>>"
 )
