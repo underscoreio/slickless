@@ -116,6 +116,7 @@ Publish sequence could be:
 
 ```
 sbt> set pgpPassphrase := Some(Array('s','e','c','r','3','t'))
+sbt> set publishTo := sonatypePublishTo.value
 sbt> +publishSigned
 sbt> sonatypeRelease
 ```

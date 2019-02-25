@@ -53,5 +53,3 @@ pomExtra in Global := {
   </developers>
 }
 
-publishTo := sonatypePublishTo.value
-
