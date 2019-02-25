@@ -1,6 +1,6 @@
 name         := "slickless"
 organization := "io.underscore"
-version      := "0.3.4"
+version      := "0.3.5-SNAPSHOT"
 scalaVersion := "2.12.8"
 
 crossScalaVersions := Seq("2.11.12", "2.12.8")
@@ -52,3 +52,6 @@ pomExtra in Global := {
     </developer>
   </developers>
 }
+
+publishTo := sonatypePublishTo.value
+
