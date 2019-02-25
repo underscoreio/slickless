@@ -112,6 +112,14 @@ We use the [sbt-pgp plugin](http://www.scala-sbt.org/sbt-pgp/usage.html) and
 the [sbt-sonatype plugin](https://github.com/xerial/sbt-sonatype)
 to publish to [Maven Central](https://issues.sonatype.org/browse/OSSRH-24293).
 
+Publish sequence could be:
+
+```
+sbt> set pgpPassphrase := Some(Array('s','e','c','r','3','t'))
+sbt> +publishSigned
+sbt> sonatypeRelease
+```
+
 [d6y]: https://github.com/d6y
 [milessabin]: https://github.com/milessabin
 [davegurnell]: https://github.com/davegurnell
