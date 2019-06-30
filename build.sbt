@@ -3,7 +3,7 @@ organization := "io.underscore"
 version      := "0.3.5-SNAPSHOT"
 scalaVersion := "2.12.8"
 
-crossScalaVersions := Seq("2.11.12", "2.12.8", "2.13.0-RC2")
+crossScalaVersions := Seq("2.11.12", "2.12.8", "2.13.0")
 
 licenses += ("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0"))
 
@@ -20,9 +20,9 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"           % "3.3.1",
+  "com.typesafe.slick" %% "slick"           % "3.3.2",
   "com.chuusai"        %% "shapeless"       % "2.3.3",
-  "org.scalatest"      %% "scalatest"       % "3.0.8-RC5"   % "test",
+  "org.scalatest"      %% "scalatest"       % "3.1.0-SNAP13"   % "test",
   "com.h2database"      % "h2"              % "1.4.199" % "test",
   "ch.qos.logback"      % "logback-classic" % "1.2.3"   % "test"
 )
