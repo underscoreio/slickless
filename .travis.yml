@@ -1,11 +1,13 @@
 language: scala
 
+dist: trusty
+
 jdk:
 - oraclejdk8
 
 scala:
 - 2.11.12
-- 2.12.4
+- 2.12.8
 
 script:
 - sbt clean coverage test coverageReport
