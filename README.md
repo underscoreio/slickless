@@ -1,7 +1,7 @@
 # slickless
 
 [![Build Status](https://travis-ci.org/underscoreio/slickless.svg?branch=master)](https://travis-ci.org/underscoreio/slickless)
-[![Coverage status](https://img.shields.io/codecov/c/github/underscoreio/slickless/develop.svg)](https://codecov.io/github/underscoreio/slickless)
+[![codecov](https://codecov.io/gh/underscoreio/slickless/branch/master/graph/badge.svg)](https://codecov.io/gh/underscoreio/slickless)
 [![Join the chat at https://gitter.im/underscoreio/slickless](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/underscoreio/slickless?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Shapeless HList support for Slick.
