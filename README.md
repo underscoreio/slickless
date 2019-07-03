@@ -19,9 +19,8 @@ Licensed [Apache 2][license].
 |-------|----------|----------|
 | 2.13  | 3.3      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12) |
 | 2.12  | 3.3      | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.underscore/slickless_2.12) |
+| 2.12  | 3.2      | 0.3.3 |
 | 2.11  | 3.1      | 0.3.0 |
-
-If you specifically need Slick 3.2, use [slickless 0.3.3](https://github.com/underscoreio/slickless/releases/tag/0.3.3).
 
 ## Getting Started
 
