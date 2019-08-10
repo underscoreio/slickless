@@ -38,7 +38,7 @@ trait HListShapeImplicits {
     new HListShape(Nil)
 
   implicit def hconsShape[
-    L <: ShapeLevel, L1 <: L, L2 <: L,
+    L <: ShapeLevel, L1 <: ShapeLevel, L2 <: ShapeLevel, 
     M1, M2 <: HList,
     U1, U2 <: HList,
     P1, P2 <: HList
