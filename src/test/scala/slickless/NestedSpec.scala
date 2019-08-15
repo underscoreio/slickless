@@ -31,6 +31,7 @@ class NestedSpec extends Spec {
       val emp = Employee(1L, Department(42L, "Brighton"), "dave@example.org")
 
       val action = for {
+        _   <- emps.schema.drop.asTry
         _   <- emps.schema.create
         _   <- emps += emp
         ans <- emps.result.head
