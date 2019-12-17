@@ -1,9 +1,9 @@
 language: scala
 
-dist: trusty
+dist: bionic
 
 jdk:
-- oraclejdk8
+- openjdk11
 
 scala:
 - 2.11.12
