@@ -53,7 +53,7 @@ trait HListShapeImplicits {
       R: ClassTag, U <: HList, L <: FlatShapeLevel, P
     ](gen: Generic.Aux[R, U])(
       implicit shape: Shape[L, T, U, P]
-    ) = new MappedProjection[R, U](
+    ) = new MappedProjection[R](
       shape.toNode(hlist),
       MappedScalaType.Mapper(
         (gen.to _).asInstanceOf[Any => Any],

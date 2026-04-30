@@ -1,9 +1,9 @@
 name         := "slickless"
 organization := "io.underscore"
 version      := "0.3.7-SNAPSHOT"
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.18"
 
-crossScalaVersions := Seq("2.11.12", "2.12.10", "2.13.1")
+crossScalaVersions := Seq("2.12.21", "2.13.18")
 
 licenses += ("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0"))
 
@@ -20,7 +20,7 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick"           % "3.3.2",
+  "com.typesafe.slick" %% "slick"           % "3.6.1",
   "com.chuusai"        %% "shapeless"       % "2.3.3",
   "org.scalatest"      %% "scalatest"       % "3.2.0-M4"   % "test",
   "com.h2database"      % "h2"              % "1.4.200" % "test",

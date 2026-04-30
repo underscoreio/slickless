@@ -6,7 +6,7 @@ import org.scalatest.freespec.AnyFreeSpec
 import org.scalatest.matchers.should.Matchers
 
 abstract class Spec extends AnyFreeSpec with Matchers with ScalaFutures {
-  implicit val patience = PatienceConfig(timeout = Span(30, Seconds), interval = Span(250, Millis))
+  implicit val patience: PatienceConfig = PatienceConfig(timeout = Span(30, Seconds), interval = Span(250, Millis))
 }
 
 
